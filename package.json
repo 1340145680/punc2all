@@ -3,7 +3,7 @@
   "displayName": "标点自动转换",
   "description": "自动将中文标点符号转换为英文。有多语言支持，兼容注释、字符串。能够自定义符号映射表与正则表达式。",
   "version": "0.0.1",
-  "publisher": "ACT_Meteor",
+  "publisher": "ACT-Meteor",
   "engines": {
     "vscode": "^1.96.0"
   },
