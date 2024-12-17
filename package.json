@@ -1,0 +1,114 @@
+{
+  "name": "punc2all",
+  "displayName": "标点自动转换",
+  "description": "自动将中文标点符号转换为英文。有多语言支持，兼容注释、字符串。能够自定义符号映射表与正则表达式。",
+  "version": "0.0.1",
+  "publisher": "ACT_Meteor",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1340145680/punc2all"
+  },
+  "icon": "icon.png",
+  "main": "./out/extension.js",
+  "contributes": {
+    "keybindings": {
+      "command": "punc2all.enableCorrection",
+      "key": "Alt+N"
+    },
+    "configuration": {
+      "type": "object",
+      "title": "标点自动转换配置",
+      "properties": {
+        "punc2all.mapTable": {
+          "type": "object",
+          "default": {
+            "。": ".",
+            "，": ",",
+            "：": ":",
+            "；": ";",
+            "！": "!",
+            "“": "\"",
+            "”": "\"",
+            "‘": "'",
+            "’": "'",
+            "（": "(",
+            "）": ")",
+            "【": "[",
+            "】": "]",
+            "》": ">",
+            "《": "<",
+            "…": "^",
+            "￥": "$",
+            "、": "/",
+            "？": "?",
+            "·": "`",
+            "—": "_"
+          },
+          "scope": "resource",
+          "description": "符号映射替换表，左边为目标符号，右边为替换符号"
+        },
+        "punc2all.commentRegexMap": {
+          "type": "object",
+          "default": {
+            "javascript": "//.*$",
+            "typescript": "//.*$",
+            "python": "#.*$",
+            "java": "//.*$",
+            "c": "//.*$",
+            "cpp": "//.*$",
+            "csharp": "//.*$",
+            "ruby": "#.*$",
+            "go": "//.*$",
+            "swift": "//.*$",
+            "php": "//.*$",
+            "rust": "//.*$",
+            "kotlin": "//.*$",
+            "shell": "#.*$",
+            "r": "#.*$",
+            "perl": "#.*$",
+            "perl6": "#.*$",
+            "haskell": "--.*$",
+            "elixir": "#.*$",
+            "erlang": "%.*$",
+            "lua": "--.*$",
+            "scala": "//.*$",
+            "dart": "//.*$",
+            "julia": "#.*$",
+            "matlab": "%.*$",
+            "fsharp": "//.*$",
+            "groovy": "//.*$",
+            "objectivec": "//.*$",
+            "vbnet": "'[^\\r\\n]*$"
+          },
+          "scope": "resource",
+          "description": "单行注释的正则表达式，根据语言自动匹配"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.10.2",
+    "@types/vscode": "^1.96.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "typescript": "^5.7.2"
+  }
+}

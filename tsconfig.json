@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "target": "ES2022", // 编译后的目标版本
+    "lib": ["ES2022"], // 编译时使用的库
+    "outDir": "out", // 输出目录
+    "rootDir": "src", // 输入目录
+    "esModuleInterop": true, // 启用对 ES 模块与 CommonJS 模块之间互操作性的支持
+    "forceConsistentCasingInFileNames": true, // 强制在文件名的大小写方面保持一致
+    "noImplicitAny": false, //启用隐式的 any 类型
+    "strict": false, // 启用所有严格的类型检查选项
+    "skipLibCheck": true, // 跳过类型声明文件的类型检查
+    "sourceMap": false // 生成相应的 .map 文件
+  },
+  "incremental": true, //启用增量编译
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", ".vscode-test"]
+}

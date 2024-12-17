@@ -1,0 +1,7 @@
+{
+  "useEditorConfig": false,
+  "resolveGlobalModules": true,
+  "printWidth": 150,
+  "bracketSameLine": true,
+  "htmlWhitespaceSensitivity": "ignore"
+}
